@@ -1,0 +1,23 @@
+﻿<Window x:Class="Palisades.UI.View.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Palisades.UI.View"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Style="{StaticResource MaterialDesignWindow}"
+        Title="About Palisades"
+        Height="450"
+        Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label FontSize="48">Palisades</Label>
+        </StackPanel>
+    </Grid>
+</Window>

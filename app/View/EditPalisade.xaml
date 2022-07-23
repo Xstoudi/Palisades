@@ -1,0 +1,81 @@
+﻿<Window x:Class="Palisades.View.EditPalisade"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+        xmlns:local="clr-namespace:Palisades.View"
+        xmlns:viewModel="clr-namespace:Palisades.ViewModel"
+        xmlns:converters="clr-namespace:Palisades.Converters"
+        mc:Ignorable="d"
+        Title="Edit Palisade"
+        Width="400"
+        SizeToContent="Height"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Style="{StaticResource MaterialDesignWindow}"
+        ResizeMode="NoResize">
+    <Window.DataContext>
+        <viewModel:PalisadeViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ColorPicker;component/Styles/DefaultColorPickerStyle.xaml" />
+                <ResourceDictionary>
+                    <Style TargetType="TextBox">
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="Margin" Value="0,5,0,5" />
+                    </Style>
+                    
+                    <Style TargetType="colorpicker:PortableColorPicker">
+                        <Setter Property="FontSize" Value="18" />
+                    </Style>
+                    <converters:SolidBrushToColor x:Key="brushConverter" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Style="{StaticResource MaterialDesignLabel}" FontSize="24">Name</Label>
+        <TextBox Style="{StaticResource MaterialDesignTextBox}" FontSize="24" Grid.Column="2" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  />
+
+        <Label Grid.Row="2" Style="{StaticResource MaterialDesignLabel}" FontSize="24">Header Color</Label>
+        <colorpicker:PortableColorPicker Grid.Row="2" Grid.Column="2" SelectedColor="{Binding HeaderColor, Mode=TwoWay}" Width="80" HorizontalAlignment="Center" Style="{StaticResource DefaultColorPickerStyle}" />
+
+        <Label Grid.Row="4" Style="{StaticResource MaterialDesignLabel}" FontSize="24">Body Color</Label>
+        <colorpicker:PortableColorPicker Grid.Row="4" Grid.Column="2" SelectedColor="{Binding BodyColor, Mode=TwoWay}" Width="80" HorizontalAlignment="Center" Style="{StaticResource DefaultColorPickerStyle}" />
+
+        <Label Grid.Row="6" Style="{StaticResource MaterialDesignLabel}" FontSize="24">Title Color</Label>
+        <colorpicker:PortableColorPicker Grid.Row="6" Grid.Column="2" SelectedColor="{Binding TitleColor, Converter={StaticResource brushConverter}, Mode=TwoWay}" Width="80" HorizontalAlignment="Center" Style="{StaticResource DefaultColorPickerStyle}" />
+
+        <Label Grid.Row="8" Style="{StaticResource MaterialDesignLabel}" FontSize="24">Labels Color</Label>
+        <colorpicker:PortableColorPicker Grid.Row="8" Grid.Column="2" SelectedColor="{Binding LabelsColor, Converter={StaticResource brushConverter}, Mode=TwoWay}" Width="80" HorizontalAlignment="Center" Style="{StaticResource DefaultColorPickerStyle}" />
+
+    </Grid>
+</Window>
