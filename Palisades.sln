@@ -3,22 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palisades.UI", "app\Palisades.UI.csproj", "{961C6285-0A8B-4D94-A776-A8C12984CA58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palisades.Application", "Palisades.Application\Palisades.Application.csproj", "{961C6285-0A8B-4D94-A776-A8C12984CA58}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Palisades.Setup", "setup\setup.vdproj", "{9FC40937-DD80-477C-B81C-4735FD0CBC92}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Palisades.Installer", "Palisades.Installer\Palisades.Installer.vdproj", "{35FBEC33-8CDE-4C2E-97C2-FB9EA85462D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{961C6285-0A8B-4D94-A776-A8C12984CA58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{961C6285-0A8B-4D94-A776-A8C12984CA58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961C6285-0A8B-4D94-A776-A8C12984CA58}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{961C6285-0A8B-4D94-A776-A8C12984CA58}.Debug|x86.Build.0 = Debug|Any CPU
 		{961C6285-0A8B-4D94-A776-A8C12984CA58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{961C6285-0A8B-4D94-A776-A8C12984CA58}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9FC40937-DD80-477C-B81C-4735FD0CBC92}.Debug|Any CPU.ActiveCfg = Debug
-		{9FC40937-DD80-477C-B81C-4735FD0CBC92}.Release|Any CPU.ActiveCfg = Release
+		{961C6285-0A8B-4D94-A776-A8C12984CA58}.Release|x86.ActiveCfg = Release|Any CPU
+		{961C6285-0A8B-4D94-A776-A8C12984CA58}.Release|x86.Build.0 = Release|Any CPU
+		{35FBEC33-8CDE-4C2E-97C2-FB9EA85462D6}.Debug|Any CPU.ActiveCfg = Debug
+		{35FBEC33-8CDE-4C2E-97C2-FB9EA85462D6}.Debug|x86.ActiveCfg = Debug
+		{35FBEC33-8CDE-4C2E-97C2-FB9EA85462D6}.Release|Any CPU.ActiveCfg = Release
+		{35FBEC33-8CDE-4C2E-97C2-FB9EA85462D6}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
