@@ -15,7 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_277C1B1FC25F4CFFA8DB4A33E8CCF81B"
+        "MsmKey" = "8:_BCECF6F40B5D4B4DAE2D6B40A90DA457"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EC826C0A3D184021A7815F94281E92DA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -37,6 +43,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -53,6 +75,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -84,6 +122,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BCECF6F40B5D4B4DAE2D6B40A90DA457"
+            {
+            "SourcePath" = "8:..\\Palisades.Application\\Ressources\\icon.ico"
+            "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_DE54936198324573AA5F44001A6D4CAF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -97,6 +155,17 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:ProgramMenuFolder"
+                "Folders"
+                {
+                }
+            }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_59FD8917B1AD49578CA0FEB2258F1E94"
+            {
+            "Name" = "8:#1921"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:StartMenuFolder"
                 "Folders"
                 {
                 }
@@ -261,32 +330,46 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_84B07E603F894FB4A31191D172058C2B"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_01F91DA1D3D142B3A3A6CCFFF8A2BA7F"
             {
-            "Name" = "8:Shortcut to Éléments de publication from Palisades.Application (Active)"
+            "Name" = "8:Palisades"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_277C1B1FC25F4CFFA8DB4A33E8CCF81B"
-            "Folder" = "8:_0DFF19C5C37146E8910AC4A9FD7DA3F8"
+            "Target" = "8:_EC826C0A3D184021A7815F94281E92DA"
+            "Folder" = "8:_59FD8917B1AD49578CA0FEB2258F1E94"
             "WorkingFolder" = "8:_DE54936198324573AA5F44001A6D4CAF"
-            "Icon" = "8:"
+            "Icon" = "8:_BCECF6F40B5D4B4DAE2D6B40A90DA457"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EFCE81006BE2402B89A71E9CAEFF303B"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4D3EFB6FC5A64CC18215F479EEC2EF51"
             {
-            "Name" = "8:Shortcut to Éléments de publication from Palisades.Application (Active)"
+            "Name" = "8:Palisades"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_277C1B1FC25F4CFFA8DB4A33E8CCF81B"
+            "Target" = "8:_EC826C0A3D184021A7815F94281E92DA"
             "Folder" = "8:_C9B8B14194F24BA4B44D054D07B6D4CB"
             "WorkingFolder" = "8:_DE54936198324573AA5F44001A6D4CAF"
-            "Icon" = "8:"
+            "Icon" = "8:_BCECF6F40B5D4B4DAE2D6B40A90DA457"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7658CA83A76443E0BD0EEF5C60D963C4"
+            {
+            "Name" = "8:Palisades"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_EC826C0A3D184021A7815F94281E92DA"
+            "Folder" = "8:_0DFF19C5C37146E8910AC4A9FD7DA3F8"
+            "WorkingFolder" = "8:_DE54936198324573AA5F44001A6D4CAF"
+            "Icon" = "8:_BCECF6F40B5D4B4DAE2D6B40A90DA457"
             "Feature" = "8:"
             }
         }
@@ -688,9 +771,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_277C1B1FC25F4CFFA8DB4A33E8CCF81B"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EC826C0A3D184021A7815F94281E92DA"
             {
-            "SourcePath" = "8:..\\Palisades.Application\\bin\\Release\\net6.0-windows\\publish\\win-x64\\Palisades.exe"
+            "SourcePath" = "8:..\\Palisades.Application\\obj\\Debug\\net6.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_DE54936198324573AA5F44001A6D4CAF"
@@ -712,7 +795,6 @@
             "OutputGroupCanonicalName" = "8:PublishItems"
             "OutputProjectGuid" = "8:{961C6285-0A8B-4D94-A776-A8C12984CA58}"
             "ShowKeyOutput" = "11:TRUE"
-            "PublishProfilePath" = "8:Properties\\PublishProfiles\\x64.pubxml"
                 "ExcludeFilters"
                 {
                 }
