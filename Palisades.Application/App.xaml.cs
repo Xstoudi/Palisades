@@ -6,7 +6,7 @@ namespace Palisades
         public App()
         {
             PalisadesManager.LoadPalisades();
-            if(PalisadesManager.palisades.Count == 0)
+            if (PalisadesManager.palisades.Count == 0)
             {
                 PalisadesManager.CreatePalisade();
             }

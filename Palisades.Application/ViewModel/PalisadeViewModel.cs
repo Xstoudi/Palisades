@@ -1,21 +1,17 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-
-using System.ComponentModel;
-using System.Windows.Input;
-using Palisades.Helpers;
-using System.IO;
-using System.Xml.Serialization;
+﻿using Palisades.Helpers;
 using Palisades.Model;
-using System.Collections.ObjectModel;
-using System.Windows;
-using System.Collections.Specialized;
-using System.Windows.Media;
-
 using Palisades.View;
-using Bitmap = System.Drawing.Bitmap;
-using System.Drawing.Imaging;
+using System;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.IO;
+using System.Runtime.CompilerServices;
 using System.Threading;
+using System.Windows;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Xml.Serialization;
 
 namespace Palisades.ViewModel
 {
@@ -172,16 +168,26 @@ namespace Palisades.ViewModel
             {
                 string? extension = Path.GetExtension(shortcut);
 
-                if (extension == null) continue;
+                if (extension == null)
+                {
+                    continue;
+                }
+
                 if (extension == ".lnk")
                 {
                     Shortcut? shortcutItem = LnkShortcut.BuildFrom(shortcut, Identifier);
-                    if(shortcutItem != null) Shortcuts.Add(shortcutItem);
+                    if (shortcutItem != null)
+                    {
+                        Shortcuts.Add(shortcutItem);
+                    }
                 }
                 if (extension == ".url")
                 {
                     Shortcut? shortcutItem = UrlShortcut.BuildFrom(shortcut, Identifier);
-                    if (shortcutItem != null) Shortcuts.Add(shortcutItem);
+                    if (shortcutItem != null)
+                    {
+                        Shortcuts.Add(shortcutItem);
+                    }
                 }
 
 

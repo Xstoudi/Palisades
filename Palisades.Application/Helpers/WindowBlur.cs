@@ -9,18 +9,18 @@ namespace Palisades.Helpers
     /**
      * Source : https://gist.github.com/walterlv/752669f389978440d344941a5fcd5b00#file-windowblur-cs
      */
-    public class WindowBlur
+    internal class WindowBlur
     {
-        public static readonly DependencyProperty IsEnabledProperty = DependencyProperty.RegisterAttached(
+        internal static readonly DependencyProperty IsEnabledProperty = DependencyProperty.RegisterAttached(
             "IsEnabled", typeof(bool), typeof(WindowBlur),
             new PropertyMetadata(false, OnIsEnabledChanged));
 
-        public static void SetIsEnabled(DependencyObject element, bool value)
+        internal static void SetIsEnabled(DependencyObject element, bool value)
         {
             element.SetValue(IsEnabledProperty, value);
         }
 
-        public static bool GetIsEnabled(DependencyObject element)
+        internal static bool GetIsEnabled(DependencyObject element)
         {
             return (bool)element.GetValue(IsEnabledProperty);
         }
@@ -43,16 +43,16 @@ namespace Palisades.Helpers
             }
         }
 
-        public static readonly DependencyProperty WindowBlurProperty = DependencyProperty.RegisterAttached(
+        internal static readonly DependencyProperty WindowBlurProperty = DependencyProperty.RegisterAttached(
             "WindowBlur", typeof(WindowBlur), typeof(WindowBlur),
             new PropertyMetadata(null, OnWindowBlurChanged));
 
-        public static void SetWindowBlur(DependencyObject element, WindowBlur value)
+        internal static void SetWindowBlur(DependencyObject element, WindowBlur value)
         {
             element.SetValue(WindowBlurProperty, value);
         }
 
-        public static WindowBlur GetWindowBlur(DependencyObject element)
+        internal static WindowBlur GetWindowBlur(DependencyObject element)
         {
             return (WindowBlur)element.GetValue(WindowBlurProperty);
         }
@@ -105,13 +105,21 @@ namespace Palisades.Helpers
 
         private void AttachCore()
         {
-            if (_window == null) return;
+            if (_window == null)
+            {
+                return;
+            }
+
             EnableBlur(_window);
         }
 
         private void DetachCore()
         {
-            if (_window == null) return;
+            if (_window == null)
+            {
+                return;
+            }
+
             _window.SourceInitialized += OnSourceInitialized;
         }
 

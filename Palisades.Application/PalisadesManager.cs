@@ -2,7 +2,6 @@
 using Palisades.Model;
 using Palisades.View;
 using Palisades.ViewModel;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
@@ -31,7 +30,7 @@ namespace Palisades
                 reader.Close();
             }
 
-            foreach(PalisadeModel loadedModel in loadedModels)
+            foreach (PalisadeModel loadedModel in loadedModels)
             {
                 palisades.Add(loadedModel.Identifier, new Palisade(new PalisadeViewModel(loadedModel)));
             }
@@ -54,11 +53,15 @@ namespace Palisades
         public static void DeletePalisade(string identifier)
         {
             palisades.TryGetValue(identifier, out Palisade? palisade);
-            if(palisade == null)
+            if (palisade == null)
             {
                 return;
             }
-            if(palisade.DataContext != null) ((PalisadeViewModel)palisade.DataContext).Delete();
+            if (palisade.DataContext != null)
+            {
+                ((PalisadeViewModel)palisade.DataContext).Delete();
+            }
+
             palisade.Close();
             palisades.Remove(identifier);
 
@@ -67,7 +70,7 @@ namespace Palisades
         public static Palisade GetPalisade(string identifier)
         {
             palisades.TryGetValue(identifier, out Palisade? palisade);
-            if(palisade == null)
+            if (palisade == null)
             {
                 throw new KeyNotFoundException(identifier);
             }

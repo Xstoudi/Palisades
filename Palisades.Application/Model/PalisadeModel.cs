@@ -33,7 +33,7 @@ namespace Palisades.Model
             shortcuts = new();
         }
 
-        public string Identifier { get { return identifier;  } set { identifier = value; } }
+        public string Identifier { get { return identifier; } set { identifier = value; } }
         public string Name { get { return name; } set { name = value; } }
 
         public int FenceX { get { return fenceX; } set { fenceX = value; } }

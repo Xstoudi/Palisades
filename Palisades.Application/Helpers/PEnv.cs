@@ -2,13 +2,13 @@
 {
     internal class PEnv
     {
-        public static bool IsDev()
+        internal static bool IsDev()
         {
-            #if DEBUG
+#if DEBUG
             return true;
-            #else
+#else
             return false;
-            #endif
+#endif
         }
     }
 }

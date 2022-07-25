@@ -1,11 +1,8 @@
 ﻿using Palisades.Helpers;
-using Palisades.ViewModel;
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Windows.Input;
 using System.Xml.Serialization;
 
 namespace Palisades.Model
@@ -18,7 +15,7 @@ namespace Palisades.Model
         private string iconPath;
         private string uriOrFileAction;
 
-        public Shortcut(): this("", "", "")
+        public Shortcut() : this("", "", "")
         {
 
         }

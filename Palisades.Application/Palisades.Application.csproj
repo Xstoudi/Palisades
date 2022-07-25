@@ -21,10 +21,7 @@
     <AssemblyName>Palisades</AssemblyName>
     <PackageLicenseFile>D:\Programmation\Perso\Palisades\LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Platforms>AnyCPU;x64</Platforms>
     <ApplicationIcon>Ressources\icon.ico</ApplicationIcon>
-    <StartupObject></StartupObject>
-    <NeutralLanguage>aa-DJ</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">

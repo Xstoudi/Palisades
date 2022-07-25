@@ -2,7 +2,7 @@
 
 namespace Palisades.Helpers
 {
-    public class HyperlinkCommander : Hyperlink
+    internal class HyperlinkCommander : Hyperlink
     {
         protected override void OnClick()
         {

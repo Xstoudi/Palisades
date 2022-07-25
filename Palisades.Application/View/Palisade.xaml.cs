@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using Palisades.ViewModel;
+﻿using Palisades.ViewModel;
+using System.Windows;
 
 namespace Palisades.View
 {

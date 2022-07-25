@@ -1,16 +1,15 @@
-﻿using System;
+﻿using Palisades.Helpers.Native;
+using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
 
-using Palisades.Helpers.Native;
-
-namespace Palisades.Helpers {
-    public class WindowSinker
+namespace Palisades.Helpers
+{
+    internal class WindowSinker
     {
         #region Windows API
-
         private const int WM_WINDOWPOSCHANGING = 0x0046;
 
         private const uint SWP_NOSIZE = 0x0001;
@@ -19,17 +18,16 @@ namespace Palisades.Helpers {
         private const uint SWP_NOACTIVATE = 0x0010;
 
         private static readonly IntPtr HWND_BOTTOM = new(1);
-
-        // ReSharper restore InconsistentNaming
-
         #endregion
 
-        #region WindowSinker
+        #region Attributs
 
         private readonly Window window;
         private bool disposed;
 
-        public WindowSinker(Window window)
+        #endregion
+
+        internal WindowSinker(Window window)
         {
             this.window = window;
 
@@ -45,9 +43,18 @@ namespace Palisades.Helpers {
             window.Closing += OnWindowClosing;
         }
 
+        ~WindowSinker()
+        {
+            Dispose(false);
+        }
+
+        #region Methods
         protected virtual void Dispose(bool? disposing)
         {
-            if (disposed) return;
+            if (disposed)
+            {
+                return;
+            }
 
             window.Loaded -= OnWindowLoaded;
             window.Closing -= OnWindowClosing;
@@ -60,12 +67,6 @@ namespace Palisades.Helpers {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-
-        ~WindowSinker()
-        {
-            Dispose(false);
-        }
-
         #endregion
 
         #region Event Handlers
@@ -159,7 +160,7 @@ namespace Palisades.Helpers {
     namespace Native
     {
         [StructLayout(LayoutKind.Sequential)]
-        public struct WINDOWPOS
+        internal struct WINDOWPOS
         {
             public IntPtr hwnd;
             public IntPtr hwndInsertAfter;
