@@ -35,7 +35,7 @@
                     <Run Text="Xavier Stouder" />
                 </helpers:HyperlinkCommander>
                 <Run Text=" and released under MIT licence. You can report issues, check for updates and even contribute on the " />
-                <helpers:HyperlinkCommander Foreground="{StaticResource MaterialDesignDarkForeground}" Command="{Binding NavigateCommand}" CommandParameter="https://stouder.io/">
+                <helpers:HyperlinkCommander Foreground="{StaticResource MaterialDesignDarkForeground}" Command="{Binding NavigateCommand}" CommandParameter="https://github.com/Xstoudi/Palisades">
                     <Run Text="Github repository." />
                 </helpers:HyperlinkCommander>
             </TextBlock>
