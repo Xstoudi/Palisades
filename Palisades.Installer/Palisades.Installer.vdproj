@@ -170,6 +170,17 @@
                 {
                 }
             }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_B61FD6BD5FCB40BDA61A169DF74D598A"
+            {
+            "Name" = "8:#1928"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:StartupFolder"
+                "Folders"
+                {
+                }
+            }
             "{1525181F-901A-416C-8A58-119130FE478E}:_C9B8B14194F24BA4B44D054D07B6D4CB"
             {
             "Name" = "8:#1916"
@@ -210,7 +221,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Palisades"
         "ProductCode" = "8:{7D63B1FC-9EB6-40BA-B99F-A7256942AC9D}"
-        "PackageCode" = "8:{F0AAAB1A-2CD5-4C5F-BB23-618AA734E7DD}"
+        "PackageCode" = "8:{569AB511-09D7-4B98-B58E-90668FB6CCB3}"
         "UpgradeCode" = "8:{3FC17BE7-B36A-495B-A4B5-04780533157F}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -340,6 +351,20 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_EC826C0A3D184021A7815F94281E92DA"
             "Folder" = "8:_59FD8917B1AD49578CA0FEB2258F1E94"
+            "WorkingFolder" = "8:_DE54936198324573AA5F44001A6D4CAF"
+            "Icon" = "8:_BCECF6F40B5D4B4DAE2D6B40A90DA457"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3E98658FE3194543987A7E2077D7F83F"
+            {
+            "Name" = "8:Palisades"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_EC826C0A3D184021A7815F94281E92DA"
+            "Folder" = "8:_B61FD6BD5FCB40BDA61A169DF74D598A"
             "WorkingFolder" = "8:_DE54936198324573AA5F44001A6D4CAF"
             "Icon" = "8:_BCECF6F40B5D4B4DAE2D6B40A90DA457"
             "Feature" = "8:"
