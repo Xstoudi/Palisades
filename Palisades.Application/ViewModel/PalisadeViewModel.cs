@@ -143,6 +143,16 @@ namespace Palisades.ViewModel
             edit.ShowDialog();
         });
 
+        public ICommand OpenAboutCommand { get; private set; } = new RelayCommand<PalisadeViewModel>((viewModel) =>
+        {
+            About about = new()
+            {
+                DataContext = new AboutViewModel(),
+                Owner = PalisadesManager.GetPalisade(viewModel.Identifier)
+            };
+            about.ShowDialog();
+        });
+
         public ICommand DropShortcut
         {
             get

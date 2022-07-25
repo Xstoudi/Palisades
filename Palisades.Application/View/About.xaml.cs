@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Palisades.UI.View
+namespace Palisades.View
 {
     /// <summary>
     /// Logique d'interaction pour About.xaml

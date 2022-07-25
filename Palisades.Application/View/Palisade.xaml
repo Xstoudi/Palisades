@@ -9,7 +9,7 @@
         xmlns:viewModel="clr-namespace:Palisades.ViewModel"
         xmlns:converters="clr-namespace:Palisades.Converters"
         helpers:WindowBlur.IsEnabled="True"
-        helpers:WindowSinker.AlwaysOnBottom="False"
+        helpers:WindowSinker.AlwaysOnBottom="True"
         ShowInTaskbar="False"
         mc:Ignorable="d"
         Title="Palisade"
@@ -44,6 +44,8 @@
                         <MenuItem Header="Delete" Command="{Binding Path=Data.DeletePalisadeCommand, Source={StaticResource proxy}}" CommandParameter="{Binding Identifier}" />
                         <Separator />
                         <MenuItem Header="New fence" Command="{Binding Path=Data.NewPalisadeCommand, Source={StaticResource proxy}}" />
+                        <Separator />
+                        <MenuItem Header="About" Command="{Binding Path=Data.OpenAboutCommand, Source={StaticResource proxy}}" CommandParameter="{Binding}" />
                     </ContextMenu>
                 </Grid.ContextMenu>
                 <Grid.ColumnDefinitions>
