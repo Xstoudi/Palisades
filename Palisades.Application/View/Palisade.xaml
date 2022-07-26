@@ -8,6 +8,7 @@
         xmlns:helpers="clr-namespace:Palisades.Helpers"
         xmlns:viewModel="clr-namespace:Palisades.ViewModel"
         xmlns:converters="clr-namespace:Palisades.Converters"
+        xmlns:dd="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
         helpers:WindowBlur.IsEnabled="True"
         helpers:WindowSinker.AlwaysOnBottom="True"
         ShowInTaskbar="False"
@@ -72,10 +73,10 @@
                     </Rectangle.Fill>
                 </Rectangle>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                    <ItemsControl ItemsSource="{Binding Shortcuts}" Margin="20, 20, 20, 20">
+                    <ItemsControl ItemsSource="{Binding Shortcuts}" Margin="20, 20, 20, 20" dd:DragDrop.IsDragSource="True" dd:DragDrop.IsDropTarget="True">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel ItemWidth="100" />
+                                <WrapPanel />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
@@ -86,7 +87,7 @@
                                             <i:LaunchUriOrFileAction Path="{Binding UriOrFileAction}" />
                                         </i:EventTrigger>
                                     </i:Interaction.Triggers>
-                                    <Border Margin="0,0,0,10" CornerRadius="4">
+                                    <Border Margin="0,0,0,10" CornerRadius="4" Width="100">
                                         <Border.Style>
                                             <Style>
                                                 <Style.Triggers>
