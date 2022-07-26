@@ -16,14 +16,14 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Style="{StaticResource MaterialDesignWindow}"
         Title="About Palisades"
-        Height="450"
         Width="408"
+        SizeToContent="Height"
         ResizeMode="NoResize">
     <Window.DataContext>
         <viewModel:AboutViewModel />
     </Window.DataContext>
     <Grid>
-        <StackPanel HorizontalAlignment="Center" Margin="50,0,50,0" TextElement.FontSize="18">
+        <StackPanel HorizontalAlignment="Center" Margin="50,0,50,20" TextElement.FontSize="18">
             <Label FontSize="48" HorizontalAlignment="Center" Content="Palisades"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label FontWeight="Bold" Content="{Binding Version}" />
@@ -49,6 +49,9 @@
                 </Label>
                 <Label Padding="20,0,20,0">
                     <helpers:HyperlinkCommander Foreground="{StaticResource MaterialDesignDarkForeground}" Command="{Binding NavigateCommand}" CommandParameter="https://pixieditor.net/colorpicker">PixiEditor's ColorPicker</helpers:HyperlinkCommander>
+                </Label>
+                <Label Padding="20,0,20,0">
+                    <helpers:HyperlinkCommander Foreground="{StaticResource MaterialDesignDarkForeground}" Command="{Binding NavigateCommand}" CommandParameter="https://github.com/punker76/gong-wpf-dragdrop">GongSolutions.WPF.DragDrop</helpers:HyperlinkCommander>
                 </Label>
             </StackPanel>
         </StackPanel>
