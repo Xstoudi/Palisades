@@ -102,9 +102,9 @@
                                                 Source="{Binding IconPath, Converter={StaticResource PathToImage}}"
                                                 Width="48"
                                                 Height="48"
-                                                Stretch="UniformToFill" Margin="5,5,5,0"
+                                                Stretch="UniformToFill" Margin="5,5,5,5"
                                             />
-                                            <TextBlock TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" Text="{Binding Name}" Foreground="{Binding DataContext.LabelsColor, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" HorizontalAlignment="Center" Margin="5,0,5,5" />
+                                            <TextBlock TextWrapping="NoWrap" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding Name}" Foreground="{Binding DataContext.LabelsColor, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" HorizontalAlignment="Center" Margin="5,0,5,5" />
                                         </StackPanel>
                                     </Border>
                                 </ContentControl>
