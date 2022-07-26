@@ -159,10 +159,14 @@ namespace Palisades.ViewModel
 
         public void DropShortcutsHandler(DragEventArgs dragEventArgs)
         {
+
+            dragEventArgs.Handled = true;
             if (!dragEventArgs.Data.GetDataPresent(DataFormats.FileDrop))
             {
+                dragEventArgs.Handled = false;
                 return;
             }
+
             string[] shortcuts = (string[])dragEventArgs.Data.GetData(DataFormats.FileDrop);
             foreach (string shortcut in shortcuts)
             {
@@ -189,8 +193,6 @@ namespace Palisades.ViewModel
                         Shortcuts.Add(shortcutItem);
                     }
                 }
-
-
             }
         }
 
