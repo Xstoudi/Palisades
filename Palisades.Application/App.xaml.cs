@@ -1,4 +1,5 @@
-﻿using Sentry;
+﻿using Palisades.Helpers;
+using Sentry;
 using System.Windows.Threading;
 
 namespace Palisades
@@ -24,7 +25,7 @@ namespace Palisades
             SentrySdk.Init(o =>
             {
                 o.Dsn = "https://ffd9f3db270c4bd583ab3041d6264c38@o1336793.ingest.sentry.io/6605931";
-                o.Debug = false;
+                o.Debug = PEnv.IsDev();
                 o.TracesSampleRate = 1;
             });
         }
