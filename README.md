@@ -30,6 +30,9 @@ Just download the latest installer on the [Releases](https://github.com/Xstoudi/
 - Individually customize name, background color and text colors for headers and body of your Palisades.
 - Creating more and deleting existing Palisades.
 
+## Usage
+Just drag and drop shortcuts in a Palisade to add it in. If you want to customize your Palisade or add a new one, right click on a Palisade header.
+
 ## Techs used
 
 Palisades was made using .NET 6 and WPF. It uses Material Design In XAML for some part of the UI and Sentry to automagically report issues you could encounters.
