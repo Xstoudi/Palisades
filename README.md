@@ -16,6 +16,9 @@
 
 Palisades allow you to organize your desktop icons.
 
+![image](https://user-images.githubusercontent.com/2575182/181373105-3ba42faa-7cf2-4a71-8a9d-c3b330e0e860.png)
+
+
 ## Getting Started
 
 Just download the latest installer on the [Releases](https://github.com/Xstoudi/Palisades/releases) page, use it to install Palisades and run the software.
