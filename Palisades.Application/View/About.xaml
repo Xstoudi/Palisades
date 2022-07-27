@@ -53,6 +53,16 @@
                 <Label Padding="20,0,20,0">
                     <helpers:HyperlinkCommander Foreground="{StaticResource MaterialDesignDarkForeground}" Command="{Binding NavigateCommand}" CommandParameter="https://github.com/punker76/gong-wpf-dragdrop">GongSolutions.WPF.DragDrop</helpers:HyperlinkCommander>
                 </Label>
+                <Label Padding="20,0,20,0">
+                    <helpers:HyperlinkCommander Foreground="{StaticResource MaterialDesignDarkForeground}" Command="{Binding NavigateCommand}" CommandParameter="https://github.com/Microsoft/XamlBehaviorsWpf">
+                        XamlBehaviors for WPF
+                    </helpers:HyperlinkCommander>
+                </Label>
+                <Label Padding="20,0,20,0">
+                    <helpers:HyperlinkCommander Foreground="{StaticResource MaterialDesignDarkForeground}" Command="{Binding NavigateCommand}" CommandParameter="https://sentry.io/">
+                        Sentry
+                    </helpers:HyperlinkCommander>
+                </Label>
             </StackPanel>
         </StackPanel>
     </Grid>
