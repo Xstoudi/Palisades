@@ -32,13 +32,17 @@
     </Window.DataContext>
     <Window.Resources>
         <converters:PathToImageConverter x:Key="PathToImage" />
+        <converters:MultiValueEqualityConverter x:Key="MultiValueEqualityConverter" />
+        <helpers:BindingProxy x:Key="proxy" Data="{Binding}" />
     </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="KeyDown" >
+            <i:InvokeCommandAction Command="{Binding DelKeyPressed}" CommandParameter="{Binding}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Border x:Name="LayoutRoot" CornerRadius="20">
         <DockPanel>
             <Grid DockPanel.Dock="Top" x:Name="Header" MouseLeftButtonDown="Header_MouseLeftButtonDown" IsHitTestVisible="True" Background="#00000000" Tag="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
-                <Grid.Resources>
-                    <helpers:BindingProxy x:Key="proxy" Data="{Binding}" />
-                </Grid.Resources>
                 <Grid.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="Edit" Command="{Binding Path=Data.EditPalisadeCommand, Source={StaticResource proxy}}" CommandParameter="{Binding}" />
@@ -61,7 +65,7 @@
                 </Rectangle>
                 <Label Grid.Column="1"  Content="{Binding Name, Mode=OneWay}" Margin="5" FontSize="32" Foreground="{Binding TitleColor}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
             </Grid>
-            <Grid AllowDrop="True">
+            <Grid x:Name="drag" AllowDrop="True">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Drop">
                         <i:InvokeCommandAction Command="{Binding DropShortcut}" PassEventArgsToCommand="True" />
@@ -86,6 +90,9 @@
                                         <i:EventTrigger EventName="MouseDoubleClick" >
                                             <i:LaunchUriOrFileAction Path="{Binding UriOrFileAction}" />
                                         </i:EventTrigger>
+                                        <i:EventTrigger EventName="MouseDown" >
+                                            <i:InvokeCommandAction Command="{Binding Path=Data.ClickShortcut, Source={StaticResource proxy}}" CommandParameter="{Binding}" />
+                                        </i:EventTrigger>
                                     </i:Interaction.Triggers>
                                     <Border Margin="0,0,0,10" CornerRadius="4" Width="100">
                                         <Border.Style>
@@ -94,6 +101,15 @@
                                                     <Trigger Property="Border.IsMouseOver" Value="True" >
                                                         <Setter Property="Border.Background" Value="#20FFFFFF" />
                                                     </Trigger>
+                                                    <DataTrigger Value="True">
+                                                        <DataTrigger.Binding>
+                                                            <MultiBinding Converter="{StaticResource MultiValueEqualityConverter}">
+                                                                <Binding Mode="OneWay" />
+                                                                <Binding Path="Data.SelectedShortcut" Source="{StaticResource proxy}" Mode="OneWay" />
+                                                            </MultiBinding>
+                                                        </DataTrigger.Binding>
+                                                        <Setter Property="Border.Background" Value="#20FFFFFF" />
+                                                    </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
                                         </Border.Style>

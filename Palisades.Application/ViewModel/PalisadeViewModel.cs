@@ -21,6 +21,7 @@ namespace Palisades.ViewModel
         private readonly PalisadeModel model;
 
         private volatile bool shouldSave;
+        private Shortcut? selectedShortcut;
         #endregion
 
         #region Accessors
@@ -88,6 +89,12 @@ namespace Palisades.ViewModel
             get { return model.Shortcuts; }
             set { model.Shortcuts = value; OnPropertyChanged(); Save(); }
         }
+
+        public Shortcut? SelectedShortcut
+        {
+            get => selectedShortcut;
+            set { selectedShortcut = value; OnPropertyChanged(); Save(); }
+        }
         #endregion
 
         public PalisadeViewModel() : this(new PalisadeModel()) { }
@@ -153,7 +160,7 @@ namespace Palisades.ViewModel
         {
             get
             {
-                return new RelayCommand<DragEventArgs>(this.DropShortcutsHandler);
+                return new RelayCommand<DragEventArgs>(DropShortcutsHandler);
             }
         }
 
@@ -194,6 +201,43 @@ namespace Palisades.ViewModel
                     }
                 }
             }
+        }
+
+        public ICommand ClickShortcut
+        {
+            get
+            {
+                return new RelayCommand<Shortcut>(SelectShortcut);
+            }
+        }
+
+        public void SelectShortcut(Shortcut shortcut)
+        {
+            if (SelectedShortcut == shortcut)
+            {
+                SelectedShortcut = null;
+                return;
+            }
+            SelectedShortcut = shortcut;
+        }
+
+        public ICommand DelKeyPressed
+        {
+            get
+            {
+                return new RelayCommand(DeleteShortcut);
+            }
+        }
+
+        public void DeleteShortcut()
+        {
+            if(SelectedShortcut == null)
+            {
+                return;
+            }
+
+            Shortcuts.Remove(SelectedShortcut);
+            SelectedShortcut = null;
         }
 
         /// <summary>
